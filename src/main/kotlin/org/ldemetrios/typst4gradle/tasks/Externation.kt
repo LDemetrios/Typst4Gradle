@@ -63,6 +63,7 @@ fun Project.processExternation(source: String) {
 
     fun String.toCode() = "\"" +
             this
+                .replace("\\", "\\\\")
                 .replace("\"", "\\\"")
                 .replace("\n", "\\n")
                 .replace("\r", "\\r")
