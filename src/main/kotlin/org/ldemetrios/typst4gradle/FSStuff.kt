@@ -26,3 +26,8 @@ operator fun Path.div(x: Path) = Path.of(this.toString() + File.separator + x.to
 operator fun Path.div(x: File) = Path.of(this.toString() + File.separator + x.toString())
 operator fun File.div(x: Path) = Path.of(this.toString() + File.separator + x.toString())
 operator fun File.div(x: File) = Path.of(this.toString() + File.separator + x.toString())
+
+
+fun main() {
+    Thread.getAllStackTraces().keys.onEach(::println)
+}
