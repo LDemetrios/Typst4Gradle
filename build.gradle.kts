@@ -18,8 +18,8 @@ repositories {
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     implementation(gradleApi())
-    implementation("org.ldemetrios:typst4k:0.1.0")
-    implementation("org.ldemetrios:common-utils:0.1.0")
+    implementation("org.ldemetrios:typst4k:+")
+    implementation("org.ldemetrios:common-utils:+")
     implementation(kotlin("script-runtime"))
 }
 
