@@ -1,3 +1,5 @@
+import generator.kindaMain
+
 plugins {
     kotlin("jvm") version "1.9.20"
     `kotlin-dsl`
@@ -6,7 +8,7 @@ plugins {
 }
 
 group = "org.ldemetrios"
-version = "1.0.0"
+version = "0.2.0"
 
 repositories {
     mavenCentral()
@@ -16,10 +18,15 @@ repositories {
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     implementation(gradleApi())
-    implementation("org.ldemetrios:typst4k:1.0")
-    implementation("org.ldemetrios:common-utils:1.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation("org.ldemetrios:typst4k:0.1.0")
+    implementation("org.ldemetrios:common-utils:0.1.0")
     implementation(kotlin("script-runtime"))
+}
+
+tasks.register("generateThemesDSL") {
+    doLast {
+        kindaMain(rootDir.path)
+    }
 }
 
 tasks.test {
@@ -29,7 +36,6 @@ tasks.test {
 kotlin {
     jvmToolchain(17)
 }
-
 
 publishing {
     repositories {

@@ -1,0 +1,389 @@
+foreground: color|gradient|pattern
+background: color|gradient|pattern
+
+
+bibliography.title: none|auto|content
+bibliography.full: bool
+bibliography.style: str
+
+cite.supplement: none|content
+cite.form: none|str
+cite.style: auto|str
+
+figure.placement: none|auto|alignment
+figure.caption: none|content
+figure.kind: auto|str
+figure.supplement: none|auto|content
+figure.numbering: none|str
+figure.gap: length
+figure.outlined: bool
+
+footnote.numbering: str
+
+h.weak: bool
+v.weak: bool
+
+heading.level: auto|int
+heading.depth: int
+heading.offset: int
+heading.numbering: none|str
+heading.supplement: none|auto|content
+heading.outlined: bool
+heading.bookmarked: auto|bool
+
+highlight.fill: color|gradient|pattern
+highlight.stroke: none|length|color|gradient|stroke|pattern|dictionary<*>
+highlight.top-edge: length|str
+highlight.bottom-edge: length|str
+highlight.extent: length
+highlight.radius: relative|dictionary<*>
+
+linebreak.justify: bool
+
+outline.title: none|auto|content
+outline.target: label|selector|location
+outline.depth: none|int
+outline.indent: none|auto|bool|relative
+outline.fill: none|content
+
+overline.stroke: auto|length|color|gradient|stroke|pattern|dictionary<*>
+overline.offset: auto|length
+overline.extent: length
+overline.evade: bool
+overline.background: bool
+
+par.leading: length
+par.justify: bool
+par.linebreaks: auto|str
+par.first-line-indent: length
+par.hanging-indent: length
+
+quote.block: bool
+quote.quotes: auto|bool
+quote.attribution: none|label|content
+
+raw.block: bool
+raw.lang: none|str
+raw.align: alignment
+raw.syntaxes: str|array<*>
+raw.theme: none|str
+raw.tab-size: int
+
+ref.supplement: none|auto|content
+
+smartquote.double: bool
+smartquote.enabled: bool
+smartquote.alternative: bool
+smartquote.quotes: auto|str|array<*>|dictionary<*>
+
+strike.stroke: auto|length|color|gradient|stroke|pattern|dictionary<*>
+strike.offset: auto|length
+strike.extent: length
+strike.background: bool
+
+strong.delta: int
+
+sub.typographic: bool
+sub.baseline: length
+sub.size: length
+
+super.typographic: bool
+super.baseline: length
+super.size: length
+
+underline.stroke: auto|length|color|gradient|stroke|pattern|dictionary<*>
+underline.offset: auto|length
+underline.extent: length
+underline.evade: bool
+underline.background: bool
+
+table.columns: auto|int|relative|fraction|array<*>
+table.rows: auto|int|relative|fraction|array<*>
+table.gutter: auto|int|relative|fraction|array<*>
+table.column-gutter: auto|int|relative|fraction|array<*>
+table.row-gutter: auto|int|relative|fraction|array<*>
+table.fill: none|color|gradient|array<*>|pattern
+table.align: auto|array<*>|alignment
+table.stroke: none|length|color|gradient|array<*>|stroke|pattern|dictionary<*>
+table.inset: relative|array<relative|fraction>|dictionary<relative|fraction>
+
+text.font: str|array<str>
+text.fallback: bool
+text.style: str
+text.weight: int|str
+text.stretch: ratio
+text.size: length
+text.fill: color|gradient|pattern -> foreground
+text.stroke: none|length|color|gradient|stroke|pattern|dictionary<*>
+text.tracking: length
+text.spacing: relative
+text.cjk-latin-spacing: none|auto
+text.baseline: length
+text.overhang: bool
+text.top-edge: length|str
+text.bottom-edge: length|str
+text.lang: str
+text.region: none|str
+text.script: auto|str
+text.dir: auto|direction
+text.hyphenate: auto|bool
+text.kerning: bool
+text.alternates: bool
+text.stylistic-set: none|int
+text.ligatures: bool
+text.discretionary-ligatures: bool
+text.historical-ligatures: bool
+text.number-type: auto|str
+text.number-width: auto|str
+text.slashed-zero: bool
+text.fractions: bool
+text.features: array<str>|dictionary<int>
+
+list.tight: bool
+list.marker: content|array<content>
+list.indent: length
+list.body-indent: length
+list.spacing: auto|relative|fraction
+
+terms.tight: bool
+terms.separator: content
+terms.indent: length
+terms.hanging-indent: length
+terms.spacing: auto|relative|fraction
+
+enum.tight: bool
+enum.numbering: str
+enum.start: int
+enum.full: bool
+enum.indent: length
+enum.body-indent: length
+enum.spacing: auto|relative|fraction
+enum.number-align: alignment
+
+document.title: none|content
+document.author: str|array<str>
+document.keywords: str|array<str>
+document.date: none|auto|datetime
+
+math.accent.size: auto|relative
+
+math.attach.t: none|content
+math.attach.b: none|content
+math.attach.tl: none|content
+math.attach.bl: none|content
+math.attach.tr: none|content
+math.attach.br: none|content
+
+math.cancel.length: relative
+math.cancel.inverted: bool
+math.cancel.cross: bool
+math.cancel.angle: auto|angle
+math.cancel.stroke: length|color|gradient|stroke|pattern|dictionary<*>
+
+math.cases.delim: str
+math.cases.reverse: bool
+math.cases.gap: relative
+
+
+math.equation.block: bool
+math.equation.numbering: none|str
+math.equation.number-align: alignment
+math.equation.supplement: none|auto|content
+
+math.lr.size: auto|relative
+
+math.mat.delim: none|str
+math.mat.augment: none|int|dictionary<*>
+math.mat.gap: relative
+math.mat.row-gap: relative
+math.mat.column-gap: relative
+
+math.root.index: none|content
+
+math.underbrace.annotation: none|content
+math.overbrace.annotation: none|content
+math.underbracket.annotation: none|content
+math.overbracket.annotation: none|content
+
+math.vec.delim: none|str
+math.vec.gap: relative
+
+align.alignment: alignment
+
+block.width: auto|relative
+block.height: auto|relative
+block.breakable: bool
+block.fill: none|color|gradient|pattern
+block.stroke: none|length|color|gradient|stroke|pattern|dictionary<*>
+block.radius: relative|dictionary<*>
+block.inset: relative|dictionary<*>
+block.outset: relative|dictionary<*>
+block.spacing: relative|fraction
+block.above: relative|fraction
+block.below: relative|fraction
+block.clip: bool
+block.body: none|content
+
+box.width: auto|relative|fraction
+box.height: auto|relative
+box.baseline: relative
+box.fill: none|color|gradient|pattern
+box.stroke: none|length|color|gradient|stroke|pattern|dictionary<*>
+box.radius: relative|dictionary<*>
+box.inset: relative|dictionary<*>
+box.outset: relative|dictionary<*>
+box.clip: bool
+box.body: none|content
+
+colbreak.weak:bool
+
+columns.count: int
+columns.gutter: relative
+
+grid.columns: auto|int|relative|fraction|array<*>
+grid.rows: auto|int|relative|fraction|array<*>
+grid.gutter: auto|int|relative|fraction|array<*>
+grid.column-gutter: auto|int|relative|fraction|array<*>
+grid.row-gutter: auto|int|relative|fraction|array<*>
+grid.fill: none|color|gradient|array<*>|pattern
+grid.align: auto|array<*>|alignment
+grid.stroke: none|length|color|gradient|array<*>|stroke|pattern|dictionary<*>
+grid.inset: relative|array<*>|dictionary<*>
+
+grid.cell.x: auto|int
+grid.cell.y: auto|int
+grid.cell.colspan: int
+grid.cell.rowspan: int
+grid.cell.fill: none|auto|color|gradient|pattern
+grid.cell.align: auto|alignment
+grid.cell.inset: auto|relative|dictionary<*>
+grid.cell.stroke: none|length|color|gradient|stroke|pattern|dictionary<*>
+grid.cell.breakable: auto|bool
+
+grid.hline.y: auto|int
+grid.hline.start: int
+grid.hline.end: none|int
+grid.hline.stroke: none|length|color|gradient|stroke|pattern|dictionary<*>
+grid.hline.position: alignment
+
+grid.vline.x: auto|int
+grid.vline.start: int
+grid.vline.end: none|int
+grid.vline.stroke: none|length|color|gradient|stroke|pattern|dictionary<*>
+grid.vline.position: alignment
+
+grid.header.repeat: bool
+grid.footer.repeat: bool
+
+move.dx: relative
+move.dy: relative
+
+pad.left: relative
+pad.top: relative
+pad.right: relative
+pad.bottom: relative
+pad.x: relative
+pad.y: relative
+pad.rest: relative
+
+page.paper: str
+page.width: auto|length
+page.height: auto|length
+page.flipped: bool
+page.margin: auto|relative|dictionary<*>
+page.binding: auto|alignment
+page.columns: int
+page.fill: none|color|gradient|pattern -> background
+page.numbering: none|str
+page.number-align: alignment
+page.header: none|content
+page.header-ascent: relative
+page.footer: none|content
+page.footer-descent: relative
+page.background: none|content
+page.foreground: none|content
+
+place.alignment: auto|alignment
+place.float: bool
+place.clearance: length
+place.dx: relative
+place.dy: relative
+
+rotate.pos: angle
+rotate.origin: alignment
+rotate.reflow: bool
+
+scale.x: ratio
+scale.y: ratio
+scale.origin: alignment
+scale.reflow: bool
+
+stack.dir: direction
+stack.spacing: none|relative|fraction
+
+image.format: auto|str
+image.width: auto|relative
+image.height: auto|relative
+image.alt: none|str
+image.fit: str
+
+
+line.start: array<*>
+line.end: none|array<*>
+line.length: relative
+line.angle: angle
+line.stroke: length|color|gradient|stroke|pattern|dictionary<*>
+
+
+circle.radius: length
+circle.width: auto|relative -> ellipse.width
+circle.height: auto|relative -> ellipse.height
+circle.fill: none|color|gradient|pattern -> ellipse.fill
+circle.stroke: none|auto|length|color|gradient|stroke|pattern|dictionary<*> -> ellipse.stroke
+circle.inset: relative|dictionary<*> -> ellipse.inset
+circle.outset: relative|dictionary<*> -> ellipse.outset
+circle.body: none|content -> ellipse.body
+
+ellipse.width: auto|relative
+ellipse.height: auto|relative
+ellipse.fill: none|color|gradient|pattern -> geometry.fill
+ellipse.stroke: none|auto|length|color|gradient|stroke|pattern|dictionary<*> -> geometry.stroke
+ellipse.inset: relative|dictionary<*> -> geometry.inset
+ellipse.outset: relative|dictionary<*> -> geometry.outset
+ellipse.body: none|content -> geometry.body
+
+path.fill: none|color|gradient|pattern -> geometry.fill
+path.stroke: none|auto|length|color|gradient|stroke|pattern|dictionary<*> -> geometry.stroke
+path.closed: bool
+path.vertices: array<array<*>>
+
+polygon.fill: none|color|gradient|pattern -> geometry.fill
+polygon.stroke: none|auto|length|color|gradient|stroke|pattern|dictionary<*> -> geometry.stroke
+
+rect.width: auto|relative
+rect.height: auto|relative
+rect.fill: none|color|gradient|pattern -> geometry.fill
+rect.stroke: none|auto|length|color|gradient|stroke|pattern|dictionary<*> -> geometry.stroke
+rect.radius: relative|dictionary<*>
+rect.inset: relative|dictionary<*> -> geometry.inset
+rect.outset: relative|dictionary<*> -> geometry.outset
+rect.body: none|content -> geometry.body
+
+square.size: auto|length
+square.width: auto|relative -> rect.width
+square.height: auto|relative -> rect.height
+square.fill: none|color|gradient|pattern -> rect.fill
+square.stroke: none|auto|length|color|gradient|stroke|pattern|dictionary<*> -> rect.stroke
+square.radius: relative|dictionary<*> -> rect.radius
+square.inset: relative|dictionary<*> -> rect.inset
+square.outset: relative|dictionary<*> -> rect.outset
+square.body: none|content -> rect.body
+
+
+geometry.fill: none|color|gradient|pattern
+geometry.stroke: none|auto|length|color|gradient|stroke|pattern|dictionary<*>
+geometry.inset: relative|dictionary<*>
+geometry.outset: relative|dictionary<*>
+geometry.body: none|content
+
+
