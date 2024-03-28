@@ -10,4 +10,5 @@ operator fun <T> Action<in T>?.plus(other: Action<in T>?): Action<T> {
 }
 
 operator fun File.div(child: String) = "$this/$child"
+operator fun String.div(child: String) = "$this/$child"
 

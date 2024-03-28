@@ -38,19 +38,29 @@ abstract class Typst4GradlePlugin : Plugin<Project> {
             group = "Typst4Gradle"
             description = "Compile all typst sources"
             doLast {
-                cleanAll(project, config)
+                loadLibraries(project, config)
+            }
+        }
+
+        project.task("typstLoadLibraries") {
+            group = "Typst4Gradle"
+            description = "Load (and possibly refresh specified libraries)"
+            doLast {
+                loadLibraries(project, config)
             }
         }
     }
 }
 
- fun Project.typst4gradle(configuration: Typst4GradleConfigurator.() -> Unit): Unit = this.configure<Typst4GradleConfigurator> (configuration)
+fun Project.typst4gradle(configuration: Typst4GradleConfigurator.() -> Unit): Unit =
+    this.configure<Typst4GradleConfigurator>(configuration)
 
 abstract class Typst4GradleConfigurator(val project: Project) {
     abstract val executable: Property<String>
+    abstract val gitExecutable: Property<String>
     abstract val outputFolder: Property<String>
     abstract val sourceFolder: Property<String>
-    abstract val libraryFolder: Property<String>
+    abstract val librariesFolder: Property<String>
     abstract val formats: ListProperty<String>
 
     @get:Nested
@@ -74,15 +84,24 @@ abstract class Typst4GradleConfigurator(val project: Project) {
         action.execute(cleanConf)
     }
 
+    @get:Nested
+    abstract val librariesConf: LibraryConfigurator
+
+    fun libraries(action: Action<in LibraryConfigurator>) {
+        action.execute(librariesConf)
+    }
+
     fun setConventions() {
         outputFolder.convention("typst")
         outputFolder.convention("out")
         sourceFolder.convention("src")
-        libraryFolder.convention("lib")
+        librariesFolder.convention("lib")
+        gitExecutable.convention("git")
         formats.convention(listOf("pdf"))
         themesConf.setConventions()
         compileConf.setConventions()
         cleanConf.setConventions()
+        librariesConf.setConventions()
     }
 }
 

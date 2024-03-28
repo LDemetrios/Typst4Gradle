@@ -16,10 +16,10 @@ abstract class ThemesConfigurator(val project: Project) {
 
     abstract val themes: NamedDomainObjectContainer<GeneralThemeConfigurator>
 
-    abstract val allThemesConf: Property<Action<in GeneralThemeConfigurator>>
+    abstract val allLastConf: Property<Action<in GeneralThemeConfigurator>>
 
     fun allLast(configureAction: Action<in GeneralThemeConfigurator>) {
-        allThemesConf.set(allThemesConf.orNull + configureAction)
+        allLastConf.set(allLastConf.orNull + configureAction)
     }
 
     abstract val allFirstConf: Property<Action<in GeneralThemeConfigurator>>
@@ -32,7 +32,7 @@ abstract class ThemesConfigurator(val project: Project) {
         themes.create(name) {
             allFirstConf.orNull?.execute(this)
             configureAction.execute(this)
-            allThemesConf.orNull?.execute(this)
+            allLastConf.orNull?.execute(this)
             setConventions()
         }
     }

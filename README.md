@@ -42,7 +42,35 @@ typst4gradle {
 }
 ```
 
-... And that's all yet. See *Plans* if interested.  
+Download third party libraries:
+
+```kotlin
+typst4gradle {
+    libraries {
+        library {
+            url = "https://github.com/LDemetrios/ldemetrios-typst-commons.git"
+            version = "0.1.0"
+            alias = "ldemetrios-commons"
+            onChange = OnChange.DISCARD
+        }
+        preview("cetz:0.2.2", asModule = true)
+        preview("tablex:0.0.8")
+    }
+}
+```
+
+This will download a library from github repository and generate file `lib/all.typ`:
+
+```typst
+#import "ldemetrios-commons/0.1.0/src/lib.typ": *
+
+#import "@preview/cetz:0.2.2"
+#import "@preview/tablex:0.0.8": *
+```
+
+... And that's all yet. 
+
+Be careful: there might be not tested edge cases. Besides that, error handling in library downloading is very drafty.  
 
 Manual is coming.
 
@@ -77,7 +105,7 @@ buildscript {
         mavenLocal()
     }
     dependencies {
-        classpath("org.ldemetrios:typst4gradle:0.2.0")
+        classpath("org.ldemetrios:typst4gradle:0.3.0")
     }
 }
 
@@ -90,10 +118,8 @@ See [file](Changelog.md)
 
 ## Plans
 
-- [ ] Add support of downloading third-party libraries
+- [x] Add support of downloading third-party libraries
 - [ ] Make theme customization more straightforward
-  See file
-
 
 ## Contacts
 If you experience bugs or have proposal for improvements, feel free to open issues.
