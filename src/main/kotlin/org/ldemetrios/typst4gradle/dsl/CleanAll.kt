@@ -10,13 +10,13 @@ fun cleanAll(project: Project, config: Typst4GradleConfigurator) {
     val sourceFolder = File(project.rootDir / config.sourceFolder.get())
     val themesFolder = File(project.rootDir / config.themesConf.folder.get())
 
-    sequenceOf(sourceFolder, themesFolder).flatMap(File::walkTopDown)
+    sequenceOf(project.rootDir).flatMap(File::walkTopDown)
         .filter { it.extension in listOf("pdf", "svg", "png") }
-        .map { it to it.relativeTo(sourceFolder) }
+        .map { it to it.absoluteFile.relativeTo(project.rootDir) }
         .filter { !config.cleanConf.isIgnored(it.second.toString()) }
         .forEach {
             println("Deleting ${it.first}")
-            it.first.delete().also(::println)
+            it.first.delete()
         }
 }
 

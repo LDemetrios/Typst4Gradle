@@ -38,7 +38,7 @@ abstract class Typst4GradlePlugin : Plugin<Project> {
             group = "Typst4Gradle"
             description = "Compile all typst sources"
             doLast {
-                loadLibraries(project, config)
+                cleanAll(project, config)
             }
         }
 
